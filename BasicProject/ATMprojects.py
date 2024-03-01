@@ -3,6 +3,14 @@ class Atm:
         self.__pin=""
         self.__balance=0
         self.__menu()
+    def get_pin(self):
+        return self.__pin
+    def set_pin(self,new_pin):
+        if type(new_pin)==str:
+            self.__pin=new_pin
+            print("Pin changed")
+        else:
+            print("Not allowed")
     def __menu(self):
         user_input=input("""
                 Welcome!! 
