@@ -1,8 +1,22 @@
 class Atm:
+    #static/class
+    __counter=1
     def __init__(self):
         self.__pin=""
         self.__balance=0
-        self.__menu()
+        self.sno=Atm.__counter
+        Atm.__counter=Atm.__counter+1
+
+        # self.__menu()
+        @staticmethod
+        def get_counter():
+            return Atm.__counter
+        def set_counter(new):
+            if type(new)==int:
+                Atm.__counter=new
+            else:
+                print("Not Allowedd")
+
     def get_pin(self):
         return self.__pin
     def set_pin(self,new_pin):
